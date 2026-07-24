@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+    <script>
+        let
+        //함수로 정의해놓아야, 내가 원하는 시점에 실행할 수 있기 때문
+        function manual(){
+            n++;
+            if(n>10){
+                n=1;
+                console.log("a")
+            }
+            //문서내의 pic 이라 불리는 id를 갖는 요소의 src를 1씩 증가
+            document.getElementById("pic").src="../../images/cheetah/+n+.png";
+
+
+        }
+        function auto(){
+            setInterval("manual()", 500 );
+        }
+    </script>
+</head>
+<body>
+    <button onClick="manual()">수동</button>
+    <button onclick="auto()">자동</button>
+    <div>
+        <img src="../../images/cheetah/1.png" id="pic">
+    </div>
+</body>
+</html>

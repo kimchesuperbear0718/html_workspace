@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*HTML 에서 이미지와 텍스트를 공존시키면, 서로의 높이 차 때문에
+        이미지의 옆 공간이 비어있는 것처럼 보이게 되는데,문서의 형식이
+        깨진것처럼 보인다(사실은 정상)
+        해결책? 이미지의 현재 위치를 정상적인 위치에서 벗어나도록 공중으로
+                띄우는 기술을 적용*/
+        img{
+            width: 150px;
+            float: left;
+        }
+    
+    </style>
+</head>
+<body>
+    <img src="http://picsum.photos/150" alt="실습용 이미지">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Assumenda dignissimos perferendis reprehenderit, 
+    dolor nisi ex quisquam quaerat eaque alias culpa molestias odio consectetur 
+    repudiandae in illum! Iste, omnis natus. Soluta.
+
+</body>
+</html>

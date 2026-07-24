@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            width: 100px;
+            height: 100px;
+            background-color: #000000;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        let color="black";
+        let flag=false;
+
+        function setColor(){
+            color="yellow";
+            //아직 조건문을 배우지 않았으므로, 연산자 수준에서
+            //문제를 해결하려면, 연산자 중, 흑백논리를 판단하는
+            //삼향연산자를 사용해보자!!(삼향연산자는 if~else)
+            color=(flag)? "black" : "yellow";
+            flag=!flag;//기존 flag의 논리값을 반대로 뒤집는다
+            document.getElementById("clrcle").style.background=color;
+        }
+    </script>
+</head>
+<body>
+    <button onClick="setColor()">전환</button>
+
+    <div id="circle"></div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float 레이아웃 실습</title>
+    <style>
+        /*0.모든 기본 여백 초기화 및 박스 크기 계산 설정*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;/*테두리를 두께(px)에 포함시킵니다*/
+        }
+        body{
+            background-color: #f8f8fa;
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /*두 개의 레이아웃을 좌우로 배치하기 위한 큰 틀*/
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            gap:  80px;
+            padding: 50px;
+            margin: 0 auto;
+        }
+
+        /*---------------------------------------------------*/
+        /* 공통 스타일 (컨테이너,헤더,푸터)*/
+        /*---------------------------------------------------*/
+        .container {
+            width: 1002px; /*가로 500px + 500px + 테두리 두께*/
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .header,.footer {
+            background-color: #7dd3fc;/*연한 하늘색*/
+            color: #0369a1;
+            height: 50px;
+            border: 50px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /*매우 중요: 자식들이 float 되었을 때,부모 영역이 찌그러지거나*/
+        /*아래에 있는 푸터가 겹치며 밀고 올라오는 현상을 방지하는
+        clearfix 속성입니다*/
+        .content-area::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .footer{
+            clear: both;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /*-----------------------------------------*/
+        /*[레이아웃 1] 왼쪽 레이아웃 스타일*/
+        /*-----------------------------------------*/
+        .layout1 .boxleft {
+            width: 500px;
+            height: 300px;
+            background-color: #0284c7;/*중간 파란색*/
+            border: 1px solid #0284c7;
+            float: left;/*왼쪽으로 띄워 밀착*/
+            padding-top: 130px;
+        } 
+
+        .layout1.box-right {
+            width: 500px;
+            height: 300px;
+            background-color: #0284c7;/*진한 파란색*/
+            border: 1px solid #284c7;
+            float:right /*오른쪽으로 띄워 밀착*/
+            padding-top: 130px;
+        }
+
+        /*----------------------------------------------------*/
+        /*[레이아웃 2]오른쪽 레이아웃 스타일*/
+        /*----------------------------------------------------*/
+        .layout2 .side-left {
+            width:500px;
+            float: left;
+        }
+
+        .layout2.side-up {
+            width: 500px;
+            height: 300px;
+            background-color: #0284c7;
+            border: 1px solid #0284c7;
+            padding-top: 110px;
+        }
+
+        .latout2.side-right {
+            width: 500px;
+            height: 600px;
+            background-color: #a3e635;
+            float: right;
+            padding-top: 260px;
+        }
+    </style>
+</head>
+<body>
+    < class="container latout1">
+        <div class="header">height 50</div>
+        <div class="header">height 50</div>
+
+        div class=
+</body>
+</html>

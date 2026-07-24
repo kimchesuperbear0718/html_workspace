@@ -1,0 +1,114 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        h1,h2{
+            color: red;
+        }
+        .parent{
+            border:1px dotted blue;
+        }
+        /*.parent의 직계자식들 중 span 에 대해서만..*/
+        .parent > span{
+            background-color: #ffcccc;
+        }
+
+        .parent span{
+            color:red;
+        }
+        /*인접 형제 선택자*/
+        #target + span{
+            background-color: #ccffcc;
+        }
+
+        /*일반 형제 선택자
+        */
+        #target ~ span{
+            border: 3px solid #ff9900;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자 공부 중..</h1>
+    <h2>아래 박스들의 변화를 확인해보세요</h2>
+    
+    
+    <div class="parent">
+        
+        <span>1번 자식</span>
+        <span id="target">2번 자식</span>
+        <span>3번 자식</span>
+        <span>4번 자식</span>
+        <p>
+            <span>5번 자식</span>
+        </p>
+    </div>
+    
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        h1,h2{
+            color: red;
+        }
+        .parent{
+            border:1px dotted blue;
+        }
+        /*.parent의 직계자식들 중 span 에 대해서만..*/
+        .parent > span{
+            background-color: #ffcccc;
+        }
+
+        .parent span{
+            color:red;
+        }
+        /*인접 형제 선택자*/
+        #target + span{
+            background-color: #ccffcc;
+        }
+
+        /*일반 형제 선택자
+        */
+        #target ~ span{
+            border: 3px solid #ff9900;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자 공부 중..</h1>
+    <h2>아래 박스들의 변화를 확인해보세요</h2>
+    
+    
+    <div class="parent">
+        
+        <span>1번 자식</span>
+        <span id="target">2번 자식</span>
+        <span>3번 자식</span>
+        <span>4번 자식</span>
+        <p>
+            <span>5번 자식</span>
+        </p>
+    </div>
+    
+</body>
+>>>>>>> c12a5ede1621090c36a482f18179134026569abc
+</html>

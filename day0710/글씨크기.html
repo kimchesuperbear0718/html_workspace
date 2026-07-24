@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>css의 필요성</title>
+        <style>
+            /* 이 영역은 html 이 아닌 css 영역임 주석
+            또한 htme 주석이 적용되지 않는다
+             */
+             /* 아래와 같이 개발자가 원하는 스타일 속성을
+             {브레이스}로 묶고,이 영역에 개발자가 원하는
+             이름을 붙여놓은 단위를 가리켜 클래스라 한다 */
+             .fontstyle{
+                font-size: 500;
+                font-weight: bold;
+                color: rgb(70, 227, 91)
+             }
+             </style>
+    </head>
+        <body>
+            <!-- HTML은 디자인 도구가 아니라 단순 문서에 불과 하므로, 미적으로 꾸미는 데에는 한계가 있다
+             해결책) 문제해결을 위한 기술이 출시
+             css(cascading style sheet) 스타일 시트 
+             
+             css의 적용 방법은 총 3가지가 있다.
+             1)인라인 방식(inline)
+             -해당 태그마다 직접 적용하는 방법
+             -중복이 되지 않는 경우에만 사용하도록 하자
+             2) 임베드 방식
+             -head 태그 안에 <style> 태그안에 작성하는 css-->
+
+
+           오늘<font style="font-size: 500;font-weight: bold;color: blue;">점심</font> 
+           <font style="font-size: 500;font-weight: bold;color: blue;">뭐 먹지?</font>
+           <font class="fontstyle">Lorem</font> 
+           <font class="fontstyle">ipsum dolor sit amet </font>, 
+           <font class="fontstyle">adipisicing elit. Impedit,< 
+           nam molestiae! Odit magni, aspernatur perferendis obcaecati 
+           accusamus accusantium ratione, unde at totam atque 
+           voluptas adipisci cupiditate molestiae. Nisi, pariatur unde?
+        </body>
+</html>
