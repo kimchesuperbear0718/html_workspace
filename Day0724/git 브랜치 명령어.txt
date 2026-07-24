@@ -1,0 +1,4 @@
+git branch 내가 가지인지 몸통인지 조회하는 명령어
+git checkout -b 이름/이름 가지를 생성
+git log 커밋한내용을 시간순으로 알려줌
+

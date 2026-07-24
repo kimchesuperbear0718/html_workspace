@@ -37,6 +37,17 @@
 
             left: 400px;
             top: 500px;
+
+
+        }
+
+        
+        #box{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+
+            top: 500px;
         }
 
     </style>
@@ -47,6 +58,10 @@
 <body>
     <div class="container" id="wrapper">
         
+    </div>
+    <div class="box" id="wall">
+
+
     </div>
         <script>
         /*지금까지는 태그를 body 태그에 일일이 작성했다면,
@@ -71,6 +86,23 @@
         //우리는 문서내의 wrapper라 불리는 요소의 자식으로 pic을 부착
         document.getElementById("wrapper").appendChild(pic);
         }
+        </script>
+        <script>
+        for(let i=1;i<=15; i++){
+        let pic =document.createElement("img");
+        pic.src="../images/desert/objects/Crate.png";
+        pic.style.width=50+"px";
+        pic.style.height=50+"px";
+        pic.style.position="absolute";
+        let y=50*i;
+        pic.style.top=y+"px";
+        pic.style.left=500+"px";
+
+        //생성된 이미지를 어느 요소의 자식으로 붙일지 결정하자
+        //우리는 문서내의 wrapper라 불리는 요소의 자식으로 pic을 부착
+        document.getElementById("wrapper").appendChild(pic);
+        }
+
         </script>
 
 </body>
