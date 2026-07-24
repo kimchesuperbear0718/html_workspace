@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 화면 구성해보기</title>
+    <style>
+        /*body 태그는 디폴트로 마진이 살아있다. 따라서 웹사이트 제작사 
+        body에 적용된 디폴트 마진을 0으로 초기화시키는 작업을 반드시 해야 함*/
+        body
+        .container{
+            width: 960;
+            height: 680px;
+            background-image: url(../images/desert/BG.png);
+            background-size: 960px 680px;
+        }
+        /*HTML 은 문서이기 때문에, 요소들의 위치를 만대로 지정할 수 없으며
+        모든 요소는 언제나 왼쪽 상단을 기준으로 배치된다.
+        하지만 Css 를 이용하면 개발자가 원하는 죄표에 요소를 위치시킬 수 있다.
+        0) 고정위치(static)
+        1) 절대위치(absolute) - 부모 요소를 기준으로한 위치 지정법
+        2) 상대위치(relative)
+        */
+        #stone{
+            width: 50px;
+            height: 50px;
+            position: absolute;/**/
+
+            left: 400px;
+            top: 500px;
+        }
+
+    </style>
+    <script>
+        /*지금까지는 태그를 body 태그에 일일이 작성했다면,
+        이 예제에서는 태그를 자바스크립트를 이용하여 동적으로
+        생성해 보자*/
+        //document.getElementById() 는 기준의 body 안에 어떤 태그요소가
+        //이미 존재할때 접근하는 방법인 반면, createElement()는 프로그래밍
+        //언어로 태그를 생성하는 메시드이다
+        let pic =document.createElement("img");// <img> 태그 작성효과를 낸다
+        //<img> 만 생성한 상태이므로, src를 추가로 적용해보자
+        pic.src="../images/desert/objects/stoneBlock.png";
+
+        //생성된 이미지를 어느 요소의 자식으로 붙일지 결정하자
+        //우리는 문서내의 wrapper라 불리는 요소의 자식으로 pic을 부착
+        document.getElementById("wrapper").appendChild(pic);
+
+        
+    </script>
+</head>
+<body>
+    <div class="container" id="wrapper">
+        <!-- 바위 등장 시키기 -->
+         <!--<img src="../images/desert/objects/StoneBlock.png" alt="바위이미지" id="stone">
+    </div>
+</body>
+</html>
