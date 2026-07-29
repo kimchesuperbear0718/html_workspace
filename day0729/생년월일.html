@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 출력대상의 두자리 처리용 공통 함수*/
+        function getNumString(n){
+            //어떤 수를 대상으로 할지 결정되지는 않았지만,
+            //어떤 수를 대상으로 1자리수의 경우엔 앞에 "0" 문자열 붙이기
+            if(n<10){
+                n="0"+n;
+            }
+
+            console.log(n);
+            return n;
+        }
+
+
+
+        function getYear(){
+            let year = document.getElementById("year");
+            //console.log(year);
+            for(let i=2010; i>=1960; i--){
+            //select 요소의 자식 요소로 올수 있는 option 요소들을
+            //프로그래밍 적으로(동적) 생성하여 select 요소에 부착하자
+                let op = document.createElement("option");
+                op.text=i;
+                year.add(op); // <option>2010</option>
+            //i를 적용하기 전에, 두자리인지 여부를 따져보고,만일 두자리가
+            //아니라면 i앞에 "0" 문자열 추가
+            // let n=i;
+            // if(i<10){
+            //     n = "0"+n;
+            //     }
+            }
+
+            }
+            function getMonth(){
+                let month = document.getElementById("month");
+
+                for(let i=1;i<=12;i++){
+
+                    let op = document.createElement("option");
+
+                    op.text=getNumString(i);
+                    month.add(op);
+                }
+            }    
+            function getDate(){
+            let data = document.getElementById("date");//select 접근
+            
+            for(let i=1;i<=31;i++){
+                let op = document.createElement("option");
+                op.text=getNumString(i);
+                data.add(op);
+            }
+
+        }
+
+    </script>
+</head>
+<!--이벤트는 click, mouseover 등만 있는게 아니라, 문서가 모두 로딩
+되었을때를 감지하는 이벤트도 있다.
+따라서,body 태그 아느이 모든 태그가 다 읽혀지면 그 이후에 js로 요소를 접근할때는
+onload가 압도적으로 많이 사용된다..
+만일 onload를 쓰기 싫다면? script 태그를 </body> 직전까지 내려야 함-->
+<body onload="getYear();getMonth(); getDate()">
+    
+    <select  id="year"></select>
+    <select  id="month"></select>
+    <select  id="date"></select>
+
+</body>
+</html>

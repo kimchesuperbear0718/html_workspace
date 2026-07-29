@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+                <tr>
+                <td>201호</td>
+                <td>202호</td>
+                <td>203호</td>
+            </tr>
+            <tr>
+                <td>101호</td>
+                <td>102호</td>
+                <td>103호</td>
+            </tr>
+            -->
+            <script>
+                //문서에 write() 에서 지정한 문자열을 출력함
+                //document.write("<>")
+                //호수를 사용자로부터 입력받자
+                let h = prompt("원하시는 호수의 갯수를 입력하세요");
+                let f = prompt("원하시는 층수를 입력하세요");
+
+                document.write(`<table border="1px" width="100%">`);
+                    //아파트 또는 건축물의 층은 바로 이중반복문의 바깥반복문과 동일
+                for(let a=1;a<=25;a++){       
+                    document.write(`<tr>`);
+                    //건축물에서 한층에 대한 호수의 반복은 안쪽 반복문에 비유될수있음
+                    for(let i=1;i<=40;i++){//반복의 대상
+                        document.write(`<td>${h}호</td>`);
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+
+
+                //document.write("<marquee>박상우</marquee>");
+            
+            </script>
+        </table>
+    </body>
+    </html>
