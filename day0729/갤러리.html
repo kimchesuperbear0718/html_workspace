@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 600px;
+            background-color: aqua;
+            margin: auto;
+        }
+        .aside{
+            width: 100px;
+            height: 600px;
+            background-color: bisque;
+            float: left;
+            overflow: scroll; /*넘치는 컨텐츠는 스크롤로 처리*/
+        }
+        .aside img{
+            width: 90px;
+            height: 90px;
+        }
+
+        .content{
+            width: 500px;
+            height: 600px;
+            background-color: burlywood;
+            float: left;
+        }
+        #pic{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        //아래의 함수를 변형하여 정의해서, 모든 이미지를 처리할 수 있는
+        //업그레이드 된 함수로 정의!!
+        function setImg(){
+            //문서내의 pic이라 불리는 id를 갖는 요소의 src를 교체
+            let pic = document.getElementById("pic");
+            pic.src="../../images/2.webp";
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="aside">
+            <img src="../../images/1.webp">
+            <img src="../../images/2.webp" onMouseOver="setImg()">
+            <img src="../../images/3.webp">
+            <img src="../../images/4.webp">
+            <img src="../../images/5.webp">
+            <img src="../../images/6.webp">
+            <img src="../../images/7.webp">
+            <img src="../../images/8.webp">
+            <img src="../../images/9.webp">
+            <img src="../../images/10.webp">
+        </div>
+        <div class="content">
+            <img src="../../images/1.webp" id="pic">
+        </div>
+    </div>    
+
+</body>
+</html>
