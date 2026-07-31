@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            font-size: 200px;
+            color: black;
+        }
+    </style>
+    <script>
+        let n=0;
+
+        function setCount(){
+            n++;
+            //
+            document.getElementById("content").innerText=n;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="setCount()">카운트 올리기</button>
+    <div id="content">00</div>
+</body>
+</html>

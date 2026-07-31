@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function showServer(obj){
+            console.log(obj)
+
+            let content = document.getElementById("content");
+            //obj 는 select 박스 자체를 의미하고,그 select박스에서
+            //유저가 선택한 값은 value로 접근..
+            content.innerText=obj.value;//현재 선택된 select 박스의
+        }
+    </script>
+</head>
+<body>
+<select name="" onchage="showServer(this)">
+    <option value="google.com">구글</option>
+    <option value="naver.com">네이버</option>
+    <option value="daum.net">daum</option>
+</select>
+
+<div id="content">유저가 선택한 이메일 서버</div>
+
+
+    
+</body>
+</html>

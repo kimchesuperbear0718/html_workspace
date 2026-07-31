@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        HTML 은 문서이기 때문에,태그 요소들의 위치가 자유롭지 않다
+        따라서 개바랒가 원하는 좌표에 요소를 위치시키는 방법은 따로 없다
+        해결책? CSS의 posittion 을 이용하면 됨
+
+        [css posittion]
+        1) static : 고정된 위치 속성
+                    모든 태그의 디폴트 속성
+                    left(x축), top(y축) 값이 적용되지 않는 속성
+        2)
+        */
+        #pic{
+            width: 70px;
+            position: absolute; /*기존 static에 left,tpdd*/
+            left: 100px;
+        }   
+        .container{
+            position: relative;
+            width: 900px;
+            height:  700px;
+            background-image: url(../images/desert/BG.png);
+
+            background-size: 900px 700px;
+            background-position: -200px -0px;
+        }
+    </style>
+    <script>
+        let x=0;
+
+        function bgeffect(){
+
+            let container = document.getElementById("container");
+            container.style.backgroundPosition="${x}px 0px";
+
+        
+        }
+        function move(){
+
+
+        x+2;
+        document.getElementById("pic").style.left=x+"px";
+        }
+
+    
+    </script>
+</head>
+<body onload="auto()">
+    <button onClick="move()">좌측</button>
+    <button>우측</button>
+    <div class="container" id="container">
+    <img src="../images/hanma.jpg" id="pic">
+    </div>
+    
+</body>
+</html>
