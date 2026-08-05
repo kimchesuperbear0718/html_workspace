@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function allCheack(){
+            //테이블의 모든 메일 목록상의 체크박스들을 대상으로
+            //대표 체크 박스의 상태를 따라하게 하자
+            //1) 체크박스의 체크상태를 프로그래밍적으로 제어하는 법
+            //   체크박스의 상태를 원하는 상태로 놓기
+            //  -checked=true / false
+            //2) 문서내의 다수의 체크박스를 가리키는 방법
+            //   html 요소에 동일한 name 값을 부여하면, 내부적으로
+            //   name 값은, 배열명이 된다..
+
+            //현재 ch 라는 name 으로 묶인 요소들을 배열로 받기
+            let ch = document.getElementsByName("ch");
+            //배열화된 데이터는 반복문의 대상이 될 수있으므로, 아래의
+            //코드를 노가다 없이 반복문으로 처리해보자
+            ch[0].checked=true;//첫번째 체크박스의 상태를 체크되어있게..
+            ch[1].checked=true;//두번째 체크박스의 상태를 체크되어있게..
+            for(let i=0;i<ch.length;i++){
+                ch[i].checked=document.getElementById("king").checked;
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <table width="700px" border="1px">
+        <tr>
+            <td width="50px">
+                <input type="checkbox" onclick="allCheack()" id="king"></td>
+            <td>제목</td>
+            <td>날짜</td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="ch"></td>
+            <td>(광고) 이 베품 아직도 안써봄?</td>
+            <td>2023-08-05</td>
+        </tr>
+
+
+    </table>
+    
+</body>
+</html>

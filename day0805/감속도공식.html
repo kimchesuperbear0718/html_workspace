@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;/*자식요소인 img 가 position을 반드시 명시
+            선언했기 때문에, 부모인 content는 */
+            left: 0px;
+            top: 200px;
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        let targetX=500;
+        let targetY=300;
+
+
+        //목표지점에 한번에 다가가는 함수
+        function jump(){
+            let box = document.getElementById("box");
+            box.style.left=targetX+"px";
+        }
+
+
+
+        let a=0.1;
+        function soft(){
+            let box = document.getElementById("box");
+
+            box.style.left=parseInt(box.style.left)+a*(targetX-parseInt(box.style.left))+"px";
+        }
+
+        function init(){
+            setInterval("soft()", 25);
+
+        }
+
+
+
+        function getPos(){
+
+
+
+
+            targetX = event.clientX;
+            targetY = event.clientY;
+        }
+
+
+
+    </script>
+</head>
+<body onload="init()" onMouseDown="getPos()">
+<div style="width: 1000px; height: 900px;background-color: yellow;"></div>
+    <div id="box" style="position: absolute;left:0px"></div>
+</body>
+</html>

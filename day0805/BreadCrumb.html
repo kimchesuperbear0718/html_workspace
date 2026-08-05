@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            margin: auto;
+        }
+        .content{
+            width: 500px;
+            height: 450px;
+            background-color:  bisque;
+            position: relative;
+        }
+    </style>
+
+    <script>
+        let imgArray=[
+            "../images/1.webp",
+            "../images/2.webp",
+            "../images/3.webp",
+            "../images/4.webp",
+            "../images/5.webp",
+            "../images/6.webp",
+            "../images/7.webp",
+            "../images/8.webp",
+            "../images/9.webp",
+            "../images/10.webp"
+        ]
+        function init(){
+            //content div 안쪽에 이미지들을 통째로 안고있을 쟁반존재 필요함
+            //필요한 이유? 이미지를 일일이 움직이지 않고,이 쟁반을 이동시키면
+            //훨씬 효율적이므로...
+            let box = document.createElement("div");
+            box.style.backgroundColor="pink";
+            box.style.position="absolute";
+
+            box.style.left=0+"px";
+            box.style.width=5000+"px";
+            box.style.height=450+"px";
+
+            document.getElementById("content").appenChild(box);
+
+            for(let i=0;i<=imgArray.length;i++){
+                document.createElement("img");
+                img.src=imgArray[i];
+            }
+
+        }
+    </script>
+</head>
+<body onload="init()">
+    <div class="container"></div>
+        <div class="content"></div>
+        <div class="footer"></div>
+</body>
+</html>
