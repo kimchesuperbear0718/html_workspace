@@ -49,8 +49,17 @@
             for(let i=0;i<=imgArray.length;i++){
                 document.createElement("img");
                 img.src=imgArray[i];
+                img.style.width=500+"px";
+                img.style.height=450+"px";
+                img.style.left=i*500+"px";
+                img.style.position="absolute";
+                box.appendChild(img);
             }
 
+        }
+
+        function next(){
+            box.style.left=-500*n+"px"
         }
     </script>
 </head>
