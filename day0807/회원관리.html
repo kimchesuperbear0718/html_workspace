@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0}
+        .container{
+            width: 800px;
+            height: 600px;
+            background-color: aqua;
+            margin: auto;
+        }
+        .regist_form{
+            width: 150px;
+            height: 600px;
+            background-color: bisque;
+            float:left;
+            text-align: center;
+        }
+        .wrapper{
+            width: 500px;
+            height: 600px;
+            float: left;
+        }
+        .header{
+            width: 500px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        .detail_form{
+            width: 150px;
+            height: 600px;
+            background-color: chartreuse;
+            float:left;
+        }
+        .content{
+            width: 500px;
+            height: 550px;
+            background-color: cadetblue;
+        }
+        input{
+            width:80%;
+        }
+        table{
+            width:100%;
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        //이 등록 함수를 한번 호출할때마다, 사원의 정보를 담을 1차원배열
+        //에 정보를 넣자!!!
+        let memberList=[]; //회원 여러명을 저장할 수 있는 다차원 배열이 될 녀석
+                            //아직 어떤 회원도 넣은적이 없으므로, 1차원임    
+
+        function regist(){
+            //js는 mysql, oracle 등의 db와 통신을 통해 데이터베이스를
+            //접속하고, 명령어를 전송할 능력이 없다..
+            //따라서 이 예제에서는 메모리상에만 데이터를 보관하도록 하자
+            let emp = []; //빈배열 선언
+            emp.push(document.getElementById("user_id").value); //아이디 넣기
+            emp.push(document.getElementById("email").value); //이메일 넣기
+            emp.push(document.getElementById("loc").value); //근무위치 넣기
+            emp.push(document.getElementById("sal").value); //급여 넣기
+
+            //전역 변수로 선언한 memberList 배열에 emp 배열을 넣어버리자
+            //이 순간 memberList는 일차원 배열이 아니라, 2차원 배열이 됨
+            //2차원 배열은 아파트이자 데이터베이스 = 표 = table
+            memberList.push(emp);
+
+            getList(); //등록과 동시에 목록이 보여지도록 getList() 호출
+        }   
+        
+        //메모리상에 존재하는 memberList의 모습을 일반인들도 볼 수 있게끔
+        //시각화시켜주자 !!! 2차원배열은 표 구조와 같으므로, html 의 table
+        //로 표현하기에 너무나 좋다!
+        function getList(){
+            let content = document.getElementById("content");
+
+
+            let tag=`<table>`;
+            
+            tag=tag+`<tr>`;
+            tag=tag+`<td>ID</td>`;
+            tag=tag+`<td>Email</td>`;
+            tag=tag+`<td>Loc</td>`;
+            tag=tag+`<td>Sal</td>`;
+            tag=tag+`</tr>`;    
+                    
+            // memberList 배열안의 데이터들을 이중포문으로 꺼내서 출력
+            for(let i=0;i<memberList.length;i++){
+                tag=tag+"<tr>";//층수 (바깥포문)
+                for(let a=0;a<memberList[i].length;a++){ //호수만큼
+                    tag=tag+`<td>${memberList[i][a]}</td>`;
+                }
+                tag=tag+`</tr>`;    
+            }    
+            tag=tag+`</table>`;    
+            
+            //위에서 누적시킨 table 태그 문자열을 한번에 대입!!
+            content.innerHTML=tag;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="regist_form">
+            <input type="text" placeholder="Your ID.." id="user_id">
+            <input type="text" placeholder="Your email" id="email">
+            <input type="text" placeholder="Your location" id="loc">
+            <input type="text" placeholder="Your sal" id="sal">
+            <button onClick="regist()">등록</button>
+        </div>
+
+        <div class="wrapper">
+            <div class="header">헤더</div>       
+            <div class="content" id="content">회원 목록</div>
+        </div>
+
+        <div class="detail_form">우측 등록폼</div> 
+
+    </div>
+</body>
+</html>

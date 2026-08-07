@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            width: 300px;
+            height: 100px;
+            margin: auto;
+            background-color: bisque;
+            position: relative;/*자식요소인 img 가 position을 반드시 명시
+            선언했기 때문에, 부모인 content는 */
+
+
+            overflow: hidden;/*자식요소인 img 가 position을 반드시 명시*/
+
+        }
+    </style>
+    <script>
+        //이미지에 규칙이 없으므로, 개발자가 규칙있는 데이터를 생성
+        //배열로 선언
+        let food=[
+            "bibimbab.png",
+            "burger.png",
+            "cake.png",
+            "icecream.png",
+            "jeongol.png",
+            "lamyeon.png",
+            "pizza.png",
+            "stake.png",
+            "ttokbokki.png",
+            "udon.png"
+        ];
+
+        //여러 함수에서 이미지들의 명단이 필요하므로 전역변수로 
+        //여러 이미지를 포함할 수 있는 변수를 선언하자
+        //오늘부터는 배열을 이용해서 반복문과 함께 프로그램의 효율성을
+        //높이자
+        let imgArray=[];
+        
+        function init(){
+            for(let i=0;i<food.length;i++){
+            //이미지를 동적으로 생성하여 content div에 부착!!
+            let img = document.createElement("img");
+            img.src=`../images/food/${food[i]}`;
+            //나의 부모님을 기준으로 한 위치 속성
+
+            img.style.position = "absolute";
+            img.style.left =100*i + "px";
+            img.style.width=90+"px";
+            img.style.height=90+"px";
+
+
+            document.getElementById("content").appendChild(img);
+
+            //생성된 이미지를 배열인 전역변수에 보관하자
+            imgArray.push(img);
+            
+            
+        }
+
+
+        setInterval("move()",100);
+
+    }  
+    
+    //이미지 이동 처리
+    function move(){
+        //전체 이미지를 대상으로 left 값 5씩 감소시키자
+        //parseInt() 를 이용하여 left 값에 자동으로 붙은 'px'분자를 떼어내
+        //연산이 가능하다
+        for(let i=0;i<imgArray.length;i++){
+            imgArray[i].style.left= parseInt(imgArray[i].style.left) - 5 + "px";
+
+            //단,혹여나 left 값이 -100이하가 되는 이미지가 있다면
+            //(전체 이미지수-1)*100 에 가져다 놓자!!
+            if(parseInt(imgArray[i].style.left) < -100){
+                imgArray[i].style.left = (imgArray.length - 1) * 100 + "px";
+            }
+        }
+    }
+    </script>
+</head>
+<body onload="init()">
+    <div id="content"></div>
+</body>
+</html>

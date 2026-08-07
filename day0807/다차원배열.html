@@ -1,0 +1,53 @@
+<script>
+    /* js에서 배열을 선언하는 법
+    1) new 연산자에 의한 생성법 (내장객체)
+    2) [] 표기에 의한 생성
+    */        
+    let arr1 = new Array(5); //길이가 5 인 배열 선언
+                            //개발자가 길이를 5로 선언해도, js는 
+                            //동적으로 길이가 늘어나므로 유연함
+                            //비교) java,c,c#..대부분 언어는 배열 선언시
+                            //      반드시 그 크기를 명시해야 함..
+
+    /*多차원 배열이란?
+        - 배열안에 또 다른 배열을 담고 있는 배열
+    */
+    let carArray = ["Benz","BMW","Audi"]; //1차원 배열
+
+
+    let fruitArray = ["banana", "apple", "grape"]; //1차원 배열 
+    let skillArray=["java", "spring", "database"]; //1차원 배열
+
+    //위에서 선언한 1차원 배열들을 또 다른 일차원 배열에 넣게되면? 
+    //배열들이 순서를 가지며 배치됨 
+    let box=[];  // let box = new Array() 로 해도 됨.
+    box.push(carArray); //box 배열에 요소 동적으로 넣기!!
+    box.push(fruitArray);
+    box.push(skillArray);
+
+    //위의 2차원 배열의 모든 요소를 출력하시오 
+
+    /*
+    document.write(box[0][0]);
+    document.write(box[0][1]);
+    document.write(box[0][2]);
+
+    document.write(box[1][0]);
+    document.write(box[1][1]);
+    document.write(box[1][2]);
+
+    document.write(box[2][0]);
+    document.write(box[2][1]);
+    document.write(box[2][2]);
+    */
+    document.write("<table width='600px'>");
+    for(let i=0;i<box.length;i++){ //tr 층  
+        document.write("<tr>");
+        for(let a=0;a<box[i].length;a++){ //td 호
+            document.write("<td>"+box[i][a]+"</td>");
+        }
+        //document.write("<br>"); //줄바꿈은 층수와 관련..
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
