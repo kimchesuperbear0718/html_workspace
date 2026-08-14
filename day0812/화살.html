@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Arrow{
+            //java와는 달리, js에서는 클래스가 보유한 변수들은 반드시
+            //생성자 메서드인 contructor() 안에 선언해야 한다...
+        constructor(){
+        this.div;//화살을 가리키는 전역변수
+        this.x=0;
+        this.y=y;
+        this.color//화살의 x좌표값
+
+        this.div=document.createElement("div");
+        this.div.innerText="->";
+        this.div.style.width=20+"px";
+        this.div.style.left=this=this.x+"px";
+        this.div.style.top=y+"px";
+        this.div.style.color=this.color;
+        document.body.appendChild(this.div)
+
+        this.move();
+        }
+        //화살이 날아가는 동작 함수
+        //기존 우리가 사용ㅇ하던 함수를 클래스 안에 선언할 경우, 그냥 함수라
+        //하지않고,해당 객체의 동작 방식, 방법을 결정한다고 해서 메서드
+        //라 한다...
+        move(){
+            this.x+=this.v;
+            this.div.style.left=this.x+"px";
+
+
+            setTimeout(()=>{
+                this.move();
+            }, 50);
+        }
+      
+
+
+
+        createArrow(){
+            document.createElement("div"); // <div></div> 와 동일
+            div.innerText="->";
+            div.style.width=20+"px";
+            div.style.position="absolute";
+            div.style.left=x+"px";
+            document.body.appendChild(this.div)
+        }
+    }
+    
+        //문서가 로드 되자마자 화살 하나를 생성
+        window.addEventListener("load", function(){
+            //동적으로 화살 생성
+            createArrow();
+        });
+    </script>
+</head>
+<body >
+    
+</body>
+</html>
