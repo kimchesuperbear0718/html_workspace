@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //이미지명을 랜덤하게 접근하려면
+        let food=[
+            "bibimbap.png",
+            "burger.png",
+            "cake.png",
+            "icecream.png",
+            "jeongo1.png",
+            "lemyon.png",
+            "pizza.png",
+            "stake.png",
+            "ttokbokki.png",
+            "udon.png"
+        ]
+        //문서가 로드되면, 이미지를 동적으로 생성하여 body에 부착!!
+        function init(){
+            let img = document.createElement("img"); //<img> 작성과 동일 효과
+            //하지만 아직 이 img를 어느 부모 요소에 부착할지를 결정하지는
+            //않은 상태라서 보이지는 않는다..(즉 메모리에만 생성)
+            //id나 name은 여러 요소들간 구분이 목적이지만, body는
+            //하나의 문서에 오직 1개만 존재하므로,id나 name을 붙일
+            //이유가 없다
+            Math.random()*food.length;
+            img.src="../images/food/" + food[parseInt(Math.random()*food.length)];
+            document.body.appendChild(img);
+        }
+
+
+
+
+    </script>
+</head>
+<body onload="init()" id="body">
+
+    
+</body>
+</html>

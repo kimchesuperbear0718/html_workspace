@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+        .header{
+            width: 100%;
+            height: 100px;
+            background-color: #ff0000;
+        }
+        .content{
+            width: 100%;
+            height: calc(100vh - 100px);
+            background-color: #00ff00;
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: brown;
+        }
+        .header button{
+                width: 120px;
+                height: 50px;
+                background-color: blanchedalmond;
+                border: 0px;
+                
+            }
+
+        .content{
+            width: 100%;
+            height: 550px;
+            background-color: bisque;
+        }
+
+
+
+
+
+    </style>
+<script>
+    let board;
+
+    function init(){
+        //현재 name이 board 인 배열로 생성된 요소를 얻어옴
+        board = document.getElementsByName("board");
+
+        //board[0].style.display = "none";
+        //board[1].style.display = "none";
+        //board[2].style.display = "none";
+        ShowHide();
+    }
+
+
+    function showHide(){
+        //board[0].style.display = "block";
+        //board[1].style.display = "none";
+        //board[2].style.display = "none";
+        for(let i=0; i<board.length; i++){
+            let v = (n==i)? "block" : "none";
+            board[i].style.display = v;
+        }
+    }
+</script>
+
+</head>
+<body onload="init()">
+    <div class="container"></div>
+    <div class="header">
+        <button onclick="showHide(0)">고객센터</button>
+        <button onclick="showHide(1)">QnA</button>
+        <button onclick="showHide(2)">FAQ</button>
+    </div>
+    <div class="content"></div>
+        <table width="100%" border="1px" name="board">
+            <tr>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+        </table>
+
+         <button>QnA</button>
+    </div>
+    <div class="content"></div>
+        <table width="100%" border="1px" name="board">
+            <tr>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+            </tr>
+            <tr>
+                <td>고객센터 관련 내용 서비스 시작(공지)</td>
+                <td>관리자</td>
+                <td>2024-08-04</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

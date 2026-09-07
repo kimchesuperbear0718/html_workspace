@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>/*기존에는 갤러리를 구현하기 위해 반드시 아래의 조건을 만족하는
+    이미지로만 개발을 하였다.
+    1)반드시 이미지가 숫자의 규칙을 가질것
+    2)확장자 또한 한가지로 통일될것
+    
+    하지만,만일 고객이 이미지명에 규칙도 없고,다양한 확장자로 넘겨 준다면??
+    
+    해결책 : 개발자가 규칙을 만들어내면 된다..
+            즉 메모리에 데이터를 올릴때 순서를
+        결론 : 배열을 이용하자 !!!*/
+        let imgArray=["1.webp"
+                      "2.webp"
+                      "3.webp"
+        ];
+        let n=0;
+
+        function next(){
+            n++;
+
+            document.getElementById("pic").src="../..imges/"+imgArray[n];
+        }
+
+        
+        
+        function init(){
+            document.getElementById("pic").src="../..imges/"+imgArray[0];
+        }
+    
+        
+        </script>
+
+</head>
+<body onLoad="init()">
+    <button onclick="next()">다음 사진</button>
+
+    <img src="" id="pic">
+</body>
+</html>
